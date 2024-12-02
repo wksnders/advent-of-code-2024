@@ -14,8 +14,7 @@ const trace = msg => x => {
     return x;
   }
 
-function solveDay1(input) {
-    
+export function solveDay1(input) {
     const lists = input.split('\n')
         .map((l) => l.split("   ")
             .map((num) => 
@@ -41,4 +40,4 @@ function toNumber(x){
     return +x;
 }
 
-console.log(solveDay1(testinput));
+//console.log(solveDay1(testinput));
