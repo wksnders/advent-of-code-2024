@@ -32,12 +32,24 @@ export function solveDay1(input) {
 
 
 function distance(a, b) {
-    console.log(a,b,'dist : ', Math.abs(a - b))
     return Math.abs(a - b);
 }
 
-function toNumber(x){
-    return +x;
-}
+export function solveDay1Part2(input) {
+    const lists = input.split('\n')
+        .map((l) => l.split("   ")
+            .map((num) => 
+            pipe(
+                x => +x,
+            )(num))
+        );
+    let a = lists.map((line)=>line[0]).sort();
+    let b = lists.map((line)=>line[1]);
 
+    return a.reduce((total,numA) => total + similarity(numA,b),0);
+} 
+
+function similarity(a, b) {
+    return a * b.filter((num) => num === a).length;
+}
 //console.log(solveDay1(testinput));
