@@ -11,16 +11,36 @@ const testOutput = 2;
 function solveDay2(input) {
     const reports = input.split('\n')
         .map((report) => report.split(" ")
-            .map((num) => +num)
+            .map(Number)
         );
         
-    return reports.reduce((totalSafe,report) => totalSafe + (1*isSafe(report)),0);
+    return reports.filter(isSafe).length;
 }   
 
 function isSafe(report){
+    return hasNoRepetitions(report) && isIncreasingOrDecreasing(report) && isWithinTolerance
+}
 
+    //Any two adjacent levels differ by at least one and at most three.
+
+function isWithinTolerance(report){
+    report.reduce((previous,current)=>current)//TODO
     return true
 }
+
+function hasNoRepetitions(report){
+    //console.log("report : ",report.length ,report," set : ", new Set(report).size,new Set(report));
+    return new Set(report).size === report.length;
+}
+
+//The levels are either all increasing or all decreasing.
+function isIncreasingOrDecreasing(report){
+    let sorted = report.toSorted();
+    //console.log("report : ", report," sorted : ", sorted, "result : ",sorted.join() === report.join() , sorted.reverse().join() === report.join());
+    return sorted.join() === report.join() || sorted.reverse().join() === report.join()
+}
+
+
 
 function solveDay2Part2(input) {
 
