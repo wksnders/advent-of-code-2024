@@ -1,3 +1,5 @@
+"use strict";
+
 import { solveDay1,solveDay1Part2 } from './solutions/day01.js';
 import { solveDay2,solveDay2Part2 } from './solutions/day02.js';
 import { solveDay3,solveDay3Part2 } from './solutions/day03.js';
