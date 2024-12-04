@@ -12,7 +12,7 @@ const testinput =
 1 3 5 5 4 
 14 16 18 19 21 24 27 
 332 334 337 339 
-1 1 1
+1 1 2
 1 2 3
 3 2 1
 5 4 1
@@ -66,8 +66,45 @@ function isIncreasingOrDecreasing(report){
 
 
 export function solveDay2Part2(input) {
-
-    return 0;
+    const reports = input.trim().split('\n')
+        .map((report) => report.trim().split(" ")
+            .map(Number)
+        );
+        !isSomewhatSafe
+    const lists = reports.reduce((accumulator,current)=>
+        {
+            isSomewhatSafe(current) ? accumulator.isSafeReport.push(current) : accumulator.bruteForceReports.push(current);
+            return accumulator;
+        },
+        {
+            isSafeReport : [],
+            bruteForceReports : [],
+        }
+    );
+    console.log(lists);
+    console.log(findAndRemoveBadValue(lists.bruteForceReports));
+    return lists.isSafeReport.length + findAndRemoveBadValue(lists.bruteForceReports);
 } 
+function findAndRemoveBadValue(reports) {
+    //console.log("brute_report ",reports);
+    return reports.reduce((accumulator,report) => {
+        const arr = report.filter((_, index) => {
+            const testArray = report.filter((_, i) => i !== index); 
+            console.log()
+            return isSafe(testArray); 
+        });
+        accumulator += arr.length>=1 ? 1:0;
+        console.log(arr,accumulator);
+        return accumulator;
+    },0);
+};
 
-//console.log(solveDay2(testinput2));
+function isSomewhatSafe(report){
+    return (hasMostOneRepetitions(report) && isIncreasingOrDecreasing(report) && isWithinTolerance(report));
+}
+
+function hasMostOneRepetitions(report){
+    //console.log("report : ",report.length ,report," set : ", new Set(report).size,new Set(report));
+    return (report.length - (new Set(report).size)) <= 1;
+}
+//console.log(solveDay2Part2(testinput));
