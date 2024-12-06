@@ -68,7 +68,7 @@ const diagonalDirections2 = [
 const searchXDirection = (grid, word, startRow, startCol) => {
    const rows = grid.length;
     const cols = grid[0].length;
-
+    
     const positions2 =diagonalDirections.map(([rowOffset, colOffset]) => [
         startRow + rowOffset,
         startCol + colOffset,
