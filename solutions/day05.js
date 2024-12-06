@@ -5,6 +5,8 @@ const testOutput = 0;
 
 
 export function solveDay5(input) {
+    
+    const [rules, pages] = input.split('\n\n');
     return 0
 } 
 
