@@ -55,4 +55,4 @@ export function solveDay3Part2(input) {
 } 
 
 
-console.log(solveDay3Part2(testinput));
+//console.log(solveDay3Part2(testinput));
