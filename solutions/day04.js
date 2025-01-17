@@ -44,7 +44,7 @@ const directions = [
     [-1, 1],
 ];
 
-export function solveDay4(input) {
+export function solvePart1(input) {
     const lines = input.split('\n');
     const grid = lines.map(line => line.split(''));
     return grid.reduce(((accumulator,current,row) => {
@@ -82,7 +82,7 @@ const searchXDirection = (grid, word, startRow, startCol) => {
     return (1*diagonal);
 };
 
-export function solveDay4Part2(input) {
+export function solvePart2(input) {
     const lines = input.split('\n');
     const grid = lines.map(line => line.split(''));
     return grid.reduce(((accumulator,current,row) => {

@@ -38,7 +38,7 @@ function equationTest({result,values}){
     return bruteForceMultipladd(result,values[0],values.slice(1)) === result? result : 0;
 }
 
-export function solveDay7(input) {
+export function solvePart1(input) {
     const lines = input.split('\n');
     
     const equasions =lines.map(parseline);
@@ -71,7 +71,7 @@ function equationTest2({result,values}){
     return bruteForceMultiCatAdd(result,values[0],values.slice(1)) === result? result : 0;
 }
 
-export function solveDay7Part2(input) {
+export function solvePart2(input) {
     const lines = input.split('\n');
     
     const equasions =lines.map(parseline);
@@ -80,4 +80,4 @@ export function solveDay7Part2(input) {
         return accumulator + 1*equationTest2(current)
     }),0);
 } 
-console.log(solveDay7Part2(testinput));
+console.log(solvePart2(testinput));

@@ -81,7 +81,7 @@ const findCharacterInGrid = (grid, targetChar) => {
     return found ? { row: found.rowIndex, col: found.colIndex } : null;
 };
 
-export function solveDay6(input) {
+export function solvePart1(input) {
     
     const lines = input.split('\n');
     const grid = lines.map(line => line.split(''));
@@ -97,7 +97,7 @@ export function solveDay6(input) {
         });
         console.log("result",store);
     while(!store.noHashes && store.hitHash){
-        store = searchDirectionUntilHash(//assignment not working im too tired...
+        store = searchDirectionUntilHash(
             grid,
             store
         );
@@ -107,7 +107,7 @@ export function solveDay6(input) {
     return store.explorationScore;
 } 
 
-export function solveDay6Part2(input) {
+export function solvePart2(input) {
     return 0;
 } 
-console.log(solveDay6(testinput));
+//console.log(solveDay6(testinput));

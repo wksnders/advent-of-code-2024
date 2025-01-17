@@ -31,7 +31,7 @@ const testinput =
 const testOutput = 0;
 
 
-export function solveDay5(input) {
+export function solvePart1(input) {
     
     const [rulesInput, pagesInput] = input.split('\n\n');
     const rules = rulesInput.split('\n');
@@ -39,7 +39,7 @@ export function solveDay5(input) {
     return 0
 } 
 
-export function solveDay5Part2(input) {
+export function solvePart2(input) {
     return 0;
 } 
 //console.log(solveDay5(testinput));

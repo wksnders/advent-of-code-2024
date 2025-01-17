@@ -14,7 +14,7 @@ const trace = msg => x => {
     return x;
   }
 
-export function solveDay1(input) {
+export function solvePart1(input) {
     const lists = input.split('\n')
         .map((l) => l.split("   ")
             .map((num) => 
@@ -35,7 +35,7 @@ function distance(a, b) {
     return Math.abs(a - b);
 }
 
-export function solveDay1Part2(input) {
+export function solvePart2(input) {
     const lists = input.split('\n')
         .map((l) => l.split("   ")
             .map((num) => 

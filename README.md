@@ -1,6 +1,9 @@
 My solutions to advent of code 2024
 using Javascript to better learn functional programming
 
+To run locally use :
+python -m http.server
+
 Day 01 - -
 Day 02 - -
 Day 03 - -

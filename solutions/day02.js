@@ -24,7 +24,7 @@ const testinput =
 
 const testOutput = 13;
 
-export function solveDay2(input) {
+export function solvePart1(input) {
     const reports = input.trim().split('\n')
         .map((report) => report.trim().split(" ")
             .map(Number)
@@ -65,7 +65,7 @@ function isIncreasingOrDecreasing(report){
 
 
 
-export function solveDay2Part2(input) {
+export function solvePart2(input) {
     const reports = input.trim().split('\n')
         .map((report) => report.trim().split(" ")
             .map(Number)

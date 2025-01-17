@@ -7,7 +7,7 @@ const mulRegex = /mul\(\d+,\d+\)/g;
 const digitRegex = /\d+/g;
 
 
-export function solveDay3(input) {
+export function solvePart1(input) {
     const mulList = input.match(mulRegex);
     const number = mulList.reduce((accumulator,current)=>
         {
@@ -25,7 +25,7 @@ function resolveMul(mul){
 const mulDoDontRegex = /(mul\(\d+,\d+\))|(do\(\))|(don't\(\))/g;
 
 
-export function solveDay3Part2(input) {
+export function solvePart2(input) {
     const mulDoDontList = input.match(mulDoDontRegex);
     const mulListObj = mulDoDontList.reduce((accumulator,current)=>
         {
